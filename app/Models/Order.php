@@ -9,10 +9,15 @@ class Order extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['status'];
+    protected $fillable = ['status', 'client_id', 'product_id'];
 
     public function client(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Client::class);
+    }
+
+    public function product(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Product::class);
     }
 }

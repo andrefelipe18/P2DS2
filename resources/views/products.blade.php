@@ -14,6 +14,7 @@
 <body class="">
 <div class="flex justify-center h-screen">
     <div class="text-center">
+        <p><a href="{{route('welcome')}}" class="mt-2 btn btn-success">Voltar</a></p>
         <h1 class="text-4xl mt-12 font-bold text-gray-100">
             <button class="btn text-gray-100" onclick="clients_modal.showModal()">Cadastro de Produtos</button>
         </h1>

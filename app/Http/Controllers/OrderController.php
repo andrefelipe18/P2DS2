@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Client;
 use App\Models\Order;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -12,7 +14,10 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $orders = Order::all();
+        $clients = Client::all();
+        $products = Product::all();
+        return view('orders', compact('orders', 'clients', 'products'));
     }
 
     /**
@@ -28,7 +33,13 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $order = Order::create([
+            'client_id' => $request->client_id,
+            'product_id' => $request->product_id,
+            'status' => $request->status,
+        ]);
+
+        return redirect()->back();
     }
 
     /**
@@ -36,7 +47,7 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        //
+
     }
 
     /**
