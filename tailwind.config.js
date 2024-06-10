@@ -18,4 +18,8 @@ export default {
     },
 
     plugins: [require('daisyui'), forms],
+
+    daisyui: {
+        themes: ["dracula"]
+    }
 };
